@@ -89,3 +89,5 @@ const perfumes = [
     price: 140,
   },
 ];
+
+export default perfumes;
