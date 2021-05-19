@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import collection from "../images/laura-chouette-HaFYcr2ZelU-unsplash.jpg";
 import StyledButton from "../shared/StyledButton";
 
@@ -29,7 +30,9 @@ const Home = () => {
     <Background>
       <Introduction>
         <Title>Beautiful Designer Fragrances</Title>
-        <StyledButton>Shop Now</StyledButton>
+        <Link to="/shop">
+          <StyledButton>Shop Now</StyledButton>
+        </Link>
       </Introduction>
     </Background>
   );
