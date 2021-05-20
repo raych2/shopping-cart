@@ -1,7 +1,7 @@
-import chanel from "./anna-daudelin-m9lnm9jL918-unsplash.jpg";
-import byredo from "./charisse-kenion-uMqMqRy54es-unsplash.jpg";
+import chanel from "./anna-daudelin-m9lnm9jL918-unsplash.jpeg";
+import byredo from "./charisse-kenion-uMqMqRy54es-unsplash 2.jpeg";
 import malone from "./charles-deluvio-3IMl0kCxpHQ-unsplash.jpg";
-import viktor from "./guy-basabose-Ex154b30Ows-unsplash.jpg";
+import viktor from "./guy-basabose-Ex154b30Ows-unsplash.jpeg";
 import armani from "./heidi-walley-m6sh2vS0Yjk-unsplash.jpg";
 import givenchy from "./laura-chouette-udYyaBiSTNE-unsplash.jpg";
 import diptyque from "./raygar-he-1T34Rtm41BU-unsplash.jpg";
