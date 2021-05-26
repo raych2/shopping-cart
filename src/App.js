@@ -8,13 +8,12 @@ import "./App.css";
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
-  
-  console.log(cartItems);
 
   const addToCart = (product, count) => {
-    let newItem = [...cartItems, { item: product, quantity: count }];
+    let newItem = [...cartItems, { brand: product.brand, name: product.name, image: product.image, price: product.price, quantity: count }];
     setCartItems(newItem);
   }
+
   return (
     <Router>
       <div className="App">
@@ -22,7 +21,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/shop" render={() => <Shop cartItems={cartItems} addToCart={addToCart}/>} />
-          <Route path="/cart" component={Cart} />
+          <Route path="/cart" render={() => <Cart cartItems={cartItems} addToCart={addToCart}/>} />
         </Switch>
       </div>
     </Router>
