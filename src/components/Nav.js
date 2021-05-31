@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -29,6 +30,9 @@ const NavLink = styled(Link)`
 `;
 
 const Nav = () => {
+  const { cartItems } = useContext(CartContext);
+  const [cartItemsValue, setCartItemsValue] = cartItems;
+
   return (
     <Navbar>
       <NavLink to="/">
@@ -39,7 +43,9 @@ const Nav = () => {
           <li>Shop</li>
         </NavLink>
         <NavLink to="/cart">
-          <li>Cart</li>
+          <li>
+            Cart<span>({cartItemsValue.length})</span>
+          </li>
         </NavLink>
       </LinkList>
     </Navbar>
