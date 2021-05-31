@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import perfumes from "../images/perfumeData";
 import styled from "styled-components";
 import Header from "../shared/Header";
@@ -12,8 +13,26 @@ const PerfumeCollection = styled.div`
 
 const Shop = (props) => {
   const [products, setProducts] = useState(perfumes);
+  const { cartItems, total } = useContext(CartContext);
+  const [cartItemsValue, setCartItemsValue] = cartItems;
+  const [totalValue, setTotalValue] = total;
 
-  const addToCart = props.addToCart;
+  const addToCart = (product) => {
+    let newItem = [
+      ...cartItemsValue,
+      {
+        id: product.id,
+        brand: product.brand,
+        name: product.name,
+        image: product.image,
+        price: product.price,
+        quantity: 1,
+      },
+    ];
+    setCartItemsValue(newItem);
+    let newPrice = totalValue + product.price;
+    setTotalValue(newPrice);
+  };
 
   return (
     <div>

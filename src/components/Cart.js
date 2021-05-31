@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Header from "../shared/Header";
@@ -45,14 +46,16 @@ const EmptyMessage = styled.div`
 `;
 
 const Cart = (props) => {
-  const cartItems = props.cartItems;
+  const { cartItems, total } = useContext(CartContext);
+  const [cartItemsValue, setCartItemsValue] = cartItems;
+  const [totalValue, setTotalValue] = total;
 
   return cartItems.length !== 0 ? (
     <>
       <Header>Cart</Header>
       <CartCollection>
         <ItemCollection>
-          {cartItems.map((item, index) => {
+          {cartItemsValue.map((item, index) => {
             return (
               <ItemContainer key={index}>
                 <StyledImage
@@ -64,12 +67,12 @@ const Cart = (props) => {
                   <div>{item.name}</div>
                 </InfoContainer>
                 <div>${item.price}</div>
-                <div>{item.quantity}</div>
+                <div>Qty: {item.quantity}</div>
               </ItemContainer>
             );
           })}
         </ItemCollection>
-        <TotalContainer>$$$</TotalContainer>
+        <TotalContainer>Total: ${totalValue}</TotalContainer>
       </CartCollection>
     </>
   ) : (
