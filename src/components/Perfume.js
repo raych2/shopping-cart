@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import StyledButton from "../shared/StyledButton";
 
@@ -19,29 +19,9 @@ const StyledImage = styled.img`
   border: 5px solid gray;
 `;
 
-const StyledCounter = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  margin: 10px;
-  width: 20vw;
-`;
-
 const Perfume = (props) => {
-  const [count, setCount] = useState(0);
-
   const product = props.product;
   const addToCart = props.addToCart;
-
-  const increaseCount = () => {
-    setCount(count + 1);
-  };
-
-  const decreaseCount = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  };
 
   return (
     <PerfumeDiv>
@@ -52,12 +32,7 @@ const Perfume = (props) => {
       <PerfumeInfo>{product.brand}</PerfumeInfo>
       <PerfumeInfo>{product.name}</PerfumeInfo>
       <PerfumeInfo>${product.price}</PerfumeInfo>
-      <StyledCounter>
-        <button onClick={decreaseCount}>-</button>
-        {count}
-        <button onClick={increaseCount}>+</button>
-      </StyledCounter>
-      <StyledButton onClick={() => addToCart(product, count)}>
+      <StyledButton onClick={() => addToCart(product)}>
         Add to Cart
       </StyledButton>
     </PerfumeDiv>
