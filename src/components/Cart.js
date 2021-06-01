@@ -21,7 +21,7 @@ const TotalContainer = styled.div`
 `;
 const ItemContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   column-gap: 4px;
   margin-left: 20px;
 `;
@@ -33,6 +33,13 @@ const StyledImage = styled.img`
 const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
+`;
+const removeButton = styled.button`
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 1em;
+  text-align: center;
+  width: 10vw;
 `;
 const EmptyCart = styled.div`
   display: flex;
@@ -50,7 +57,17 @@ const Cart = (props) => {
   const [cartItemsValue, setCartItemsValue] = cartItems;
   const [totalValue, setTotalValue] = total;
 
-  return cartItems.length !== 0 ? (
+  const removeItem = (id) => {
+    for(let i = 0; i < cartItemsValue.length; i++){
+      if(cartItemsValue[i].id === id) {
+        setTotalValue(totalValue - cartItemsValue[i].price);
+      }
+    }
+    const remainingItems = cartItemsValue.filter((item) => item.id !== id);
+    setCartItemsValue(remainingItems);
+  }
+
+  return cartItemsValue.length !== 0 ? (
     <>
       <Header>Cart</Header>
       <CartCollection>
@@ -68,6 +85,7 @@ const Cart = (props) => {
                 </InfoContainer>
                 <div>${item.price}</div>
                 <div>Qty: {item.quantity}</div>
+                <removeButton onClick={() => removeItem(item.id)}>X</removeButton>
               </ItemContainer>
             );
           })}
