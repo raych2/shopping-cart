@@ -44,7 +44,14 @@ const Nav = () => {
         </NavLink>
         <NavLink to="/cart">
           <li>
-            Cart<span>({cartItemsValue.length})</span>
+            Cart
+            <span>
+              (
+              {cartItemsValue.reduce((acc, item) => {
+                return acc + item.quantity;
+              }, 0)}
+              )
+            </span>
           </li>
         </NavLink>
       </LinkList>
