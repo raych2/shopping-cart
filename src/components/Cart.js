@@ -34,7 +34,7 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const removeButton = styled.button`
+const RemoveButton = styled.button`
   border-radius: 3px;
   padding: 10px;
   font-size: 1em;
@@ -53,19 +53,10 @@ const EmptyMessage = styled.div`
 `;
 
 const Cart = (props) => {
-  const { cartItems, total } = useContext(CartContext);
+  const { cartItems, total, removeItem, handleQtyChange } =
+    useContext(CartContext);
   const [cartItemsValue, setCartItemsValue] = cartItems;
   const [totalValue, setTotalValue] = total;
-
-  const removeItem = (id) => {
-    for(let i = 0; i < cartItemsValue.length; i++){
-      if(cartItemsValue[i].id === id) {
-        setTotalValue(totalValue - cartItemsValue[i].price);
-      }
-    }
-    const remainingItems = cartItemsValue.filter((item) => item.id !== id);
-    setCartItemsValue(remainingItems);
-  }
 
   return cartItemsValue.length !== 0 ? (
     <>
@@ -84,8 +75,19 @@ const Cart = (props) => {
                   <div>{item.name}</div>
                 </InfoContainer>
                 <div>${item.price}</div>
-                <div>Qty: {item.quantity}</div>
-                <removeButton onClick={() => removeItem(item.id)}>X</removeButton>
+                <div>
+                  Qty:
+                  <button onClick={() => handleQtyChange(item.id, "subtract")}>
+                    -
+                  </button>
+                  {item.quantity}
+                  <button onClick={() => handleQtyChange(item.id, "add")}>
+                    +
+                  </button>
+                </div>
+                <RemoveButton onClick={() => removeItem(item.id)}>
+                  X
+                </RemoveButton>
               </ItemContainer>
             );
           })}

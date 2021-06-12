@@ -12,27 +12,8 @@ const PerfumeCollection = styled.div`
 `;
 
 const Shop = (props) => {
+  const { addToCart } = useContext(CartContext);
   const [products, setProducts] = useState(perfumes);
-  const { cartItems, total } = useContext(CartContext);
-  const [cartItemsValue, setCartItemsValue] = cartItems;
-  const [totalValue, setTotalValue] = total;
-
-  const addToCart = (product) => {
-    let newItem = [
-      ...cartItemsValue,
-      {
-        id: product.id,
-        brand: product.brand,
-        name: product.name,
-        image: product.image,
-        price: product.price,
-        quantity: 1,
-      },
-    ];
-    setCartItemsValue(newItem);
-    let newPrice = totalValue + product.price;
-    setTotalValue(newPrice);
-  };
 
   return (
     <div>
