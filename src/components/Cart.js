@@ -4,6 +4,12 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Header from "../shared/Header";
 import StyledButton from "../shared/StyledButton";
+import {
+  faTrashAlt,
+  faPlusSquare,
+  faMinusSquare,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CartCollection = styled.div`
   display: grid;
@@ -34,12 +40,20 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const RemoveButton = styled.button`
-  border-radius: 3px;
-  padding: 10px;
-  font-size: 1em;
-  text-align: center;
+const TotalSection = styled(InfoContainer)`
+  align-items: center;
+`;
+const QuantityContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-contents: space-evenly;
+`;
+const Quantity = styled.div`
+  padding: 0 10px;
+`;
+const Checkout = styled(StyledButton)`
   width: 10vw;
+  margin: 40px 0;
 `;
 const EmptyCart = styled.div`
   display: flex;
@@ -75,24 +89,33 @@ const Cart = (props) => {
                   <div>{item.name}</div>
                 </InfoContainer>
                 <div>${item.price}</div>
-                <div>
-                  Qty:
-                  <button onClick={() => handleQtyChange(item.id, "subtract")}>
-                    -
-                  </button>
-                  {item.quantity}
-                  <button onClick={() => handleQtyChange(item.id, "add")}>
-                    +
-                  </button>
-                </div>
-                <RemoveButton onClick={() => removeItem(item.id)}>
-                  X
-                </RemoveButton>
+                <QuantityContainer>
+                  <Quantity>Qty:</Quantity>
+                  <FontAwesomeIcon
+                    icon={faMinusSquare}
+                    size="lg"
+                    onClick={() => handleQtyChange(item.id, "subtract")}
+                  />
+                  <Quantity>{item.quantity}</Quantity>
+                  <FontAwesomeIcon
+                    icon={faPlusSquare}
+                    size="lg"
+                    onClick={() => handleQtyChange(item.id, "add")}
+                  />
+                </QuantityContainer>
+                <FontAwesomeIcon
+                  icon={faTrashAlt}
+                  size="lg"
+                  onClick={() => removeItem(item.id)}
+                />
               </ItemContainer>
             );
           })}
         </ItemCollection>
-        <TotalContainer>Total: ${totalValue}</TotalContainer>
+        <TotalSection>
+          <TotalContainer>Total: ${totalValue}</TotalContainer>
+          <Checkout>Checkout</Checkout>
+        </TotalSection>
       </CartCollection>
     </>
   ) : (
