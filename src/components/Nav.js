@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Navbar = styled.nav`
   height: 10vh;
@@ -28,6 +30,9 @@ const NavLink = styled(Link)`
   }
   color: #fff;
 `;
+const Company = styled.h3`
+  margin-left: 60px;
+`;
 
 const Nav = () => {
   const { cartItems } = useContext(CartContext);
@@ -36,7 +41,7 @@ const Nav = () => {
   return (
     <Navbar>
       <NavLink to="/">
-        <h3>Favorite Perfume Store</h3>
+        <Company>Favorite Perfume Store</Company>
       </NavLink>
       <LinkList>
         <NavLink to="/shop">
@@ -44,7 +49,7 @@ const Nav = () => {
         </NavLink>
         <NavLink to="/cart">
           <li>
-            Cart
+            <FontAwesomeIcon icon={faShoppingCart} />
             <span>
               (
               {cartItemsValue.reduce((acc, item) => {
