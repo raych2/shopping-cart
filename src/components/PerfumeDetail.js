@@ -17,7 +17,6 @@ const DetailContainer = styled.div`
 const Detail = styled.div`
   margin-bottom: 20px;
 `;
-
 const StyledImage = styled.img`
   height: 400px;
   width: auto;
