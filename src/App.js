@@ -15,8 +15,9 @@ const App = () => {
           <Nav />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/shop" component={Shop} />
+            <Route path="/shop" exact component={Shop} />
             <Route path="/cart" component={Cart} />
+            <Route path="/shop/:id"  />
           </Switch>
         </CartProvider>
       </div>

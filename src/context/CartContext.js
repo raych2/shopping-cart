@@ -1,8 +1,10 @@
 import React, { useState, createContext } from "react";
+import perfumes from "../images/perfumeData";
 
 export const CartContext = createContext();
 
 export const CartProvider = (props) => {
+  const [shopItems, setShopItems] = useState(perfumes);
   const [cartItems, setCartItems] = useState([]);
   const [total, setTotal] = useState(0);
 
@@ -65,6 +67,7 @@ export const CartProvider = (props) => {
   return (
     <CartContext.Provider
       value={{
+        shopItems: [shopItems, setShopItems],
         cartItems: [cartItems, setCartItems],
         total: [total, setTotal],
         addToCart,
