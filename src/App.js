@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
 import Cart from "./components/Cart";
+import PerfumeDetail from "./components/PerfumeDetail";
 import { CartProvider } from "./context/CartContext";
 import "./App.css";
 
@@ -17,7 +18,7 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route path="/shop" exact component={Shop} />
             <Route path="/cart" component={Cart} />
-            <Route path="/shop/:id"  />
+            <Route path="/shop/:id" component={PerfumeDetail} />
           </Switch>
         </CartProvider>
       </div>
