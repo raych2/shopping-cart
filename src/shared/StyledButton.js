@@ -9,6 +9,9 @@ const StyledButton = styled.button`
   color: #fff;
   background-color: #000;
   border-color: #000;
+  @media (max-width: 450px) {
+    width: 40vw;
+  }
 `;
 
 export default StyledButton;

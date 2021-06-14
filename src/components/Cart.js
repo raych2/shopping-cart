@@ -14,6 +14,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const CartCollection = styled.div`
   display: grid;
   grid-template-columns: 75vw 25vw;
+  @media (max-width: 420px) {
+    display: flex;
+    flex-flow: column nowrap;
+    align-contents: space-between;
+  }
 `;
 const ItemCollection = styled.div`
   display: grid;
@@ -30,23 +35,43 @@ const ItemContainer = styled.div`
   grid-template-columns: repeat(5, 1fr);
   column-gap: 4px;
   margin-left: 20px;
+  @media (max-width: 420px) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-contents: space-between;
+    width: 90%;
+  }
 `;
 const StyledImage = styled.img`
   height: 250px;
   width: auto;
   border: 5px solid gray;
+  @media (max-width: 420px) {
+    height: 100px;
+  }
 `;
 const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
+  @media (max-width: 420px) {
+    width: 60%;
+  }
 `;
-const TotalSection = styled(InfoContainer)`
+const TotalSection = styled.div`
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  @media (max-width: 420px) {
+    margin-top: 40px;
+  }
 `;
 const QuantityContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-contents: space-evenly;
+  @media (max-width: 420px) {
+    margin-right: 5px;
+  }
 `;
 const Quantity = styled.div`
   padding: 0 10px;
@@ -54,6 +79,9 @@ const Quantity = styled.div`
 const Checkout = styled(StyledButton)`
   width: 10vw;
   margin: 40px 0;
+  @media (max-width: 420px) {
+    width: 30vw;
+  }
 `;
 const EmptyCart = styled.div`
   display: flex;
@@ -73,8 +101,10 @@ const Cart = (props) => {
   const [totalValue, setTotalValue] = total;
 
   const handleCheckout = () => {
-    alert(`Sorry! Checkout isn't available because this isn't a real e-commerce website.`);
-  }
+    alert(
+      `Sorry! Checkout isn't available because this isn't a real e-commerce website.`
+    );
+  };
 
   return cartItemsValue.length !== 0 ? (
     <>

@@ -23,6 +23,13 @@ const Introduction = styled.div`
 const Title = styled.h1`
   font-size: 3em;
   margin-bottom: 40px;
+  @media (max-width: 420px) {
+    width: 50vw;
+    color: #fff;
+  }
+  @media (max-width: 1024px) {
+    width: 50vw;
+  }
 `;
 
 const Home = () => {

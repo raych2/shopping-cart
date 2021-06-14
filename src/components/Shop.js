@@ -32,10 +32,7 @@ const Shop = (props) => {
         {shopItemsValue.map((product) => {
           return (
             <PerfumeLink to={`/shop/${product.id}`} key={product.id}>
-              <Perfume
-                product={product}
-                addToCart={addToCart}
-              />
+              <Perfume product={product} addToCart={addToCart} />
             </PerfumeLink>
           );
         })}

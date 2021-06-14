@@ -22,6 +22,10 @@ const StyledImage = styled.img`
   width: auto;
   border: 5px solid gray;
   margin-left: 100px;
+  @media (max-width: 420px) {
+    height: 200px;
+    margin-left: 20px;
+  }
 `;
 
 const PerfumeDetail = ({ match }) => {

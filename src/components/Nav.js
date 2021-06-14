@@ -19,6 +19,9 @@ const LinkList = styled.ul`
   align-items: center;
   width: 10vw;
   list-style-type: none;
+  @media (max-width: 420px) {
+    width: 30%;
+  }
 `;
 const NavLink = styled(Link)`
   &:focus,
@@ -32,6 +35,9 @@ const NavLink = styled(Link)`
 `;
 const Company = styled.h3`
   margin-left: 30px;
+  @media (max-width: 420px) {
+    margin-left: 10px;
+  }
 `;
 
 const Nav = () => {

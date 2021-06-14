@@ -9,11 +9,17 @@ const PerfumeDiv = styled.div`
 `;
 const PerfumeInfo = styled.div`
   margin: 5px;
+  @media (max-width: 420px) {
+    width: 30vw;
+  }
 `;
 const StyledImage = styled.img`
   height: 400px;
   width: auto;
   border: 5px solid gray;
+  @media (max-width: 420px) {
+    height: 180px;
+  }
 `;
 
 const Perfume = (props) => {
