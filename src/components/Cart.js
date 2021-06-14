@@ -72,6 +72,10 @@ const Cart = (props) => {
   const [cartItemsValue, setCartItemsValue] = cartItems;
   const [totalValue, setTotalValue] = total;
 
+  const handleCheckout = () => {
+    alert(`Sorry! Checkout isn't available because this isn't a real e-commerce website.`);
+  }
+
   return cartItemsValue.length !== 0 ? (
     <>
       <Header>Cart</Header>
@@ -114,7 +118,7 @@ const Cart = (props) => {
         </ItemCollection>
         <TotalSection>
           <TotalContainer>Total: ${totalValue}</TotalContainer>
-          <Checkout>Checkout</Checkout>
+          <Checkout onClick={handleCheckout}>Checkout</Checkout>
         </TotalSection>
       </CartCollection>
     </>
