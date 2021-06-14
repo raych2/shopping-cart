@@ -20,11 +20,11 @@ export const CartProvider = (props) => {
       if (item.id === id) {
         const cartCopy = [...cartItems];
         const copiedItem = cartCopy[i];
-        if (op === "add") {
+        if (op === "add" && copiedItem.quantity <= 20) {
           copiedItem.quantity += 1;
           cartCopy[i] = copiedItem;
           setCartItems(cartCopy);
-        } else if (op === "subtract") {
+        } else if (op === "subtract" && copiedItem.quantity > 0) {
           copiedItem.quantity -= 1;
           cartCopy[i] = copiedItem;
           setCartItems(cartCopy);
@@ -40,7 +40,7 @@ export const CartProvider = (props) => {
       if (item.id === product.id) {
         const modifiedCart = [...cartItems];
         const modifiedItem = modifiedCart[i];
-        modifiedItem.quantity += item.quantity;
+        modifiedItem.quantity += 1;
         modifiedCart[i] = modifiedItem;
         setCartItems(modifiedCart);
         handleTotal();
