@@ -17,7 +17,7 @@ const LinkList = styled.ul`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 20vw;
+  width: 10vw;
   list-style-type: none;
 `;
 const NavLink = styled(Link)`
@@ -31,7 +31,7 @@ const NavLink = styled(Link)`
   color: #fff;
 `;
 const Company = styled.h3`
-  margin-left: 60px;
+  margin-left: 30px;
 `;
 
 const Nav = () => {
