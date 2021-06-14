@@ -11,6 +11,7 @@ const PerfumeInfo = styled.div`
   margin: 5px;
   @media (max-width: 420px) {
     width: 30vw;
+    text-align: center;
   }
 `;
 const StyledImage = styled.img`

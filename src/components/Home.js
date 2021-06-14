@@ -11,6 +11,9 @@ const Background = styled.div`
   background-size: cover;
   background-position: center;
   height: 90vh;
+  @media (max-width: 420px) {
+    overflow: hidden;
+  }
 `;
 
 const Introduction = styled.div`
