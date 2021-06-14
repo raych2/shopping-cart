@@ -10,7 +10,7 @@ import "./App.css";
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/">
       <div className="App">
         <CartProvider>
           <Nav />
