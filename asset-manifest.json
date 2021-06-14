@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.60756b77.chunk.css",
+    "main.js": "/shopping-cart/static/js/main.1c3d4fe0.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.1c3d4fe0.chunk.js.map",
+    "runtime-main.js": "/shopping-cart/static/js/runtime-main.8fe60f94.js",
+    "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.8fe60f94.js.map",
+    "static/js/2.4964e0a6.chunk.js": "/shopping-cart/static/js/2.4964e0a6.chunk.js",
+    "static/js/2.4964e0a6.chunk.js.map": "/shopping-cart/static/js/2.4964e0a6.chunk.js.map",
+    "index.html": "/shopping-cart/index.html",
+    "static/css/main.60756b77.chunk.css.map": "/shopping-cart/static/css/main.60756b77.chunk.css.map",
+    "static/js/2.4964e0a6.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.4964e0a6.chunk.js.LICENSE.txt",
+    "static/media/anna-daudelin-m9lnm9jL918-unsplash.5fee8b93.jpeg": "/shopping-cart/static/media/anna-daudelin-m9lnm9jL918-unsplash.5fee8b93.jpeg",
+    "static/media/charisse-kenion-uMqMqRy54es-unsplash 2.e73fac98.jpeg": "/shopping-cart/static/media/charisse-kenion-uMqMqRy54es-unsplash 2.e73fac98.jpeg",
+    "static/media/charles-deluvio-3IMl0kCxpHQ-unsplash.3e94a378.jpg": "/shopping-cart/static/media/charles-deluvio-3IMl0kCxpHQ-unsplash.3e94a378.jpg",
+    "static/media/guy-basabose-Ex154b30Ows-unsplash.d41ca49d.jpeg": "/shopping-cart/static/media/guy-basabose-Ex154b30Ows-unsplash.d41ca49d.jpeg",
+    "static/media/heidi-walley-m6sh2vS0Yjk-unsplash.ca9808a3.jpg": "/shopping-cart/static/media/heidi-walley-m6sh2vS0Yjk-unsplash.ca9808a3.jpg",
+    "static/media/laura-chouette-HaFYcr2ZelU-unsplash.8bedb127.jpg": "/shopping-cart/static/media/laura-chouette-HaFYcr2ZelU-unsplash.8bedb127.jpg",
+    "static/media/laura-chouette-udYyaBiSTNE-unsplash.8c21a76b.jpg": "/shopping-cart/static/media/laura-chouette-udYyaBiSTNE-unsplash.8c21a76b.jpg",
+    "static/media/raygar-he-1T34Rtm41BU-unsplash.67be0b67.jpg": "/shopping-cart/static/media/raygar-he-1T34Rtm41BU-unsplash.67be0b67.jpg",
+    "static/media/taisiia-shestopal-yn0OFyyw5ls-unsplash.06501608.jpg": "/shopping-cart/static/media/taisiia-shestopal-yn0OFyyw5ls-unsplash.06501608.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8fe60f94.js",
+    "static/js/2.4964e0a6.chunk.js",
+    "static/css/main.60756b77.chunk.css",
+    "static/js/main.1c3d4fe0.chunk.js"
+  ]
+}
