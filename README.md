@@ -8,7 +8,7 @@ _Favorite Perfume Store_ lets users add different perfumes to their shopping car
 
 
 ## Purpose
-The purpose of this project is to implement the use of React Hooks and routing with react-router-dom.  As I was building this project, I encountered issues with passing props between components. I learned about and utilized Context API to solve that issue and give my components access to those props if any should need them.
+The purpose of this project is to implement the use of React Hooks and routing with react-router-dom.  As I was building this project, I encountered issues with managing state and passing props between components. I solved that issue by utilizing Context API to give my components access to global state.
 
 ## Installation
 In your terminal, clone this repository. Then, type the following:
